@@ -1,0 +1,60 @@
+!!! 5
+html
+ head
+  title HELLLO
+  
+  script(src='javascripts/jquery.js')
+  script(src='javascripts/json2.js')
+  script(src='javascripts/underscore.js')
+  script(src='javascripts/backbone.js')
+  script(src='javascripts/backbone.marionette.min.js')
+  script(src='javascripts/backbone.wreqr.js')
+  script(src='javascripts/purl.js')
+
+ body
+  p Demo App: Dog Articles
+  p Step 1: Add your dog name on left column and mouseover
+  p Step 2: Add an activity/article name on middle column
+
+  table
+   tr
+    td(bgcolor="yellow")
+     div#header
+     div#content
+    td(bgcolor="lightblue")
+     div#middle Add a Dog first
+
+    td(bgcolor="red")
+     div#right Add an Article First
+
+
+  script(type="text/template", id="dogs-template")
+   form(id="addDog", action="#)
+    input#new-todo(placeholder="Add a Dog", name="name")
+    input(type="hidden", value="")
+    button#add Add
+   ul
+
+  script(type="text/template", id="dog-template")
+   table
+    tr
+     td 
+      div.dog <%= name %> 
+     td 
+      button#delete Delete
+
+  script(type="text/template", id="article-template")
+   li  Article  <%= articlename %>
+
+  script(type="text/template", id="articles-template")
+   form(id="addArticle", action='#')
+    input#new-article(placeholder !="New Article for <%= name %>", name="articlename")
+    input#parent-id(type="hidden", value !="<%= _id %>", name="parentref")
+    button#add-article Add Article
+
+   div Articles Collection for <%= name %>
+   
+    
+  ul
+
+  script(src='javascripts/demo-routerurl.js')
